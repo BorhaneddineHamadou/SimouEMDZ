@@ -1,0 +1,76 @@
+:root{
+    --primary-blue: #1A56A6;
+    --primary-orange: #FF802B;
+    --primary-orange-hover: #E45B00;
+}
+
+body{
+    background-color: #F6F6F6;
+}
+
+.signup-wrapper{
+  background: url('../../images/large_login_background.jpg') no-repeat;
+  background-size: cover;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 50px 0px 50px 0px;
+}
+
+.signup-wrapper h1{
+  color: var(--primary-blue);
+}
+
+.signup-wrapper .colored-span{
+    color: var(--primary-blue);
+}
+
+.signup-wrapper .form-group input, .signup-wrapper .form-group select{
+    background-color: #fff;
+    border: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.signup-wrapper .primary-button{
+    background-color: var(--primary-orange);
+    border: unset;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+}
+
+.signup-wrapper .primary-button:hover{
+    background-color: var(--primary-orange-hover);
+}
+
+.signup-wrapper .row .connect-div{
+    padding-left: 0 !important;
+}
+
+.signup-wrapper .no-padding div{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.signup-wrapper .first-form-control input, .signup-wrapper .first-form-control select{
+    width: 97%;
+}
+
+.signup-wrapper .second-form-control input, .signup-wrapper .second-form-control select{
+    width: 97%;
+    margin-left: 3%;
+}
+
+.signup-wrapper .orange-colored-span{
+    color: var(--primary-orange);
+}
+
+@media(max-width: 991px){
+    .signup-wrapper{
+        background: unset;
+        background-color: #F6F6F6;
+    }
+    .signup-wrapper .container .primary-row{
+        margin: auto !important;
+    }
+}
+

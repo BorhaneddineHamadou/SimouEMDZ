@@ -1,0 +1,26 @@
+:root{
+    --primary-white: #fff;
+    --primary-blue: #032046;
+}
+
+.footer-wrapper{
+    background-color: var(--primary-blue);
+    padding: 50px 0px 10px 0px;
+    height: fit-content;
+}
+
+.footer-wrapper a{
+    text-decoration: none;
+    color: var(--primary-white); 
+}
+.footer-wrapper .logo{
+    width:80px;
+}
+
+.footer-wrapper .btn{
+    padding: 20px;
+}
+
+.footer-wrapper .btn i{
+    margin-top: 4px;
+}

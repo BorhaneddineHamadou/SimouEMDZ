@@ -1,0 +1,91 @@
+:root{
+    --primary-blue: #1A56A6;
+    --primary-orange: #FF802B;
+    --primary-orange-hover: #E45B00;
+}
+
+body{
+    background-color: #F6F6F6;
+}
+
+.login-wrapper{
+  background: url('../../images/large_login_background.jpg') no-repeat;
+  background-size: cover;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 50px 0px 50px 0px;
+}
+
+.login-wrapper h1{
+  color: var(--primary-blue);
+}
+
+.login-wrapper .colored-span{
+    color: var(--primary-blue);
+}
+
+.login-wrapper .form-group input{
+    background-color: #fff;
+    border: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.login-wrapper .form-group #password{
+    width: 90%;
+    border-radius: .25rem 0rem 0rem .25px;
+}
+
+.login-wrapper .form-group .input-group-text{
+    width: 10%;
+    background-color: #fff;
+    border: unset;
+    /* border-radius: 0px; */
+    border-radius: 0px .25rem .25rem 0px;
+}
+
+.login-wrapper .primary-button{
+    background-color: var(--primary-orange);
+    border: unset;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+}
+
+.login-wrapper .primary-button:hover{
+    background-color: var(--primary-orange-hover);
+}
+
+.login-wrapper .row .connect-div{
+    padding-left: 0 !important;
+}
+
+.login-wrapper .orange-colored-span{
+    color: var(--primary-orange);
+}
+
+.login-wrapper hr{
+    margin-top: 10px;
+}
+
+.login-wrapper .login-google{
+    width: 80% !important;
+    padding:8px;
+    height: fit-content;
+    margin:auto;
+    text-align: center;
+}
+
+.login-wrapper .login-google span{
+    margin-left: 40px;
+}
+
+@media(max-width: 991px){
+    .login-wrapper{
+        background: unset;
+        background-color: #F6F6F6;
+    }
+    .login-wrapper .container .primary-row{
+        margin: auto;
+    }
+}
+

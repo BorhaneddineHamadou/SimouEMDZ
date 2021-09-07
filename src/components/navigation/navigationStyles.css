@@ -1,0 +1,17 @@
+:root{
+    --primary-blue: #1A56A6;
+    --primary-orange: #FF802B;
+    --primary-orange-hover: #E45B00;
+}
+
+.nav-container .logo{
+    width: 30px
+}
+
+.nav-container .nav-item, .nav-container .navbar-text{
+    text-transform: uppercase;
+}
+
+.nav-container .nav-item .nav-link.active, .nav-container .nav-item .nav-link:hover{
+    color: var(--primary-orange)
+}
