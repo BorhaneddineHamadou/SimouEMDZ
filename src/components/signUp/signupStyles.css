@@ -64,6 +64,10 @@ body{
     color: var(--primary-orange);
 }
 
+.signup-wrapper .colored-span a{
+    text-decoration: none;
+}
+
 @media(max-width: 991px){
     .signup-wrapper{
         background: unset;

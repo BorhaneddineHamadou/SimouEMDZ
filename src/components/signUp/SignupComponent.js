@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Link } from 'react-router-dom';
 import { Row, Button, Col } from 'reactstrap';
 import populateWilayas from '../wilayas_communes/WilayasCommunes';
 import './signupStyles.css';
@@ -137,7 +138,7 @@ class Signup extends Component{
                             </Row>
                        </LocalForm>
                        <span className="colored-span mb-3">Déjà inscrit ?  &nbsp;&nbsp;
-                         <span className="orange-colored-span">Connectez-vous</span>
+                         <Link to='/login'> <span className="orange-colored-span">Connectez-vous</span></Link>
                        </span>
                    </div>
                </div>

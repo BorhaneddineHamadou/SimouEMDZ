@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Control, Errors, LocalForm } from 'react-redux-form';
+import { Link } from 'react-router-dom';
 import { Row, Button } from 'reactstrap';
 import './loginStyles.css';
 
@@ -71,7 +72,7 @@ class Login extends Component{
                             </Row>
                        </LocalForm>
                        <span className="colored-span mb-3">Vous n'avez pas un compte ? &nbsp;&nbsp;
-                         <span className="orange-colored-span">Inscrivez-vous</span>
+                          <Link to='/signup'> <span className="orange-colored-span">Inscrivez-vous</span></Link>
                        </span>
                        <hr className="me-auto col-5" /> OU <hr className="ms-auto col-5" />
                        <div className="row mb-3 mt-3">

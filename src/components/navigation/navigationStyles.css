@@ -12,6 +12,15 @@
     text-transform: uppercase;
 }
 
+.nav-container .navbar-text a{
+    text-decoration: none;
+}
+
 .nav-container .nav-item .nav-link.active, .nav-container .nav-item .nav-link:hover{
-    color: var(--primary-orange)
+    color: var(--primary-orange);
+    font-weight: bolder;
+}
+
+.navbar{
+    background-color: #032046 !important;
 }

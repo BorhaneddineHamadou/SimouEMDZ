@@ -4,6 +4,13 @@
     --primary-orange-hover: #E45B00;
 }
 
+.address-input{
+    background-image: url(../../images/map.svg);
+    background-position: calc(100% - 0.75rem) center !important;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
 .header-wrapper{
     background-color: var(--primary-blue);
     background: url(../../images/primary_header_background.jpg) no-repeat;
@@ -28,7 +35,6 @@
     -moz-appearance:none !important;
     -webkit-appearance: none !important; 
     appearance: none !important;
-
 }
 
 .header-wrapper .primary-button{
@@ -45,7 +51,7 @@
 
 .header-wrapper .orange-col{
     background-color: var(--primary-orange);
-    padding: 30px 30px;
+    padding: 30px 30px 20px 30px;
     margin-bottom: -100px !important;
 }
 
@@ -55,11 +61,92 @@
 
 .header-content{
     margin-top: 90px !important;
-    margin-bottom: 90px !important;
+    margin-bottom: 50px !important;
 }
 
 .header-content h1{
   color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+.header-content .simou{
+    padding: 30px;
+}
+
+.header-content input, .header-content select{
+    border-radius: 30px;
+    padding: 10px 25px;
+}
+
+.header-content select{
+    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    background-color: #FFF;
+    -moz-appearance:none !important;
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+
+}
+
+.header-content .primary-button{
+    background-color: var(--primary-orange);
+    border: unset;
+    border-radius: 30px;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+}
+
+.header-content .primary-button:hover{
+    background-color: var(--primary-orange-hover);
+}
+
+.header-content .logo{
+    width: 180px;
+}
+
+.header-content .card-wrapper div{
+    width: 98%;
+    padding: 20px;
+    border-radius: 20px;
+    margin:auto;
+}
+.header-content .regions{
+    margin-top: 50px;
+}
+
+.header-content .regions div img{
+    width: 100%;
+}
+
+.header-content .regions .blue-div{
+    background-color: #EEF3F9;
+    padding: 20px;
+    border-radius: 20px ;
+}
+
+.exhibition-wrapper{
+    background-color: var(--primary-blue);
+    padding: 50px 0px 40px 0px;
+    color: #FFF;
+}
+
+.exhibition-wrapper h1{
+    font-size: 30px;
+}
+
+.exhibition-wrapper .exhibition-image{
+    width: 100%;
+}
+
+.exhibition-wrapper .primary-button{
+    background-color: var(--primary-orange);
+    border: unset;
+    border-radius: 30px;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+}
+
+.exhibition-wrapper .primary-button:hover{
+    background-color: var(--primary-orange-hover);
 }
 
 @media(min-width:992px){
@@ -70,6 +157,43 @@
 @media(max-width:991px){
     .header-wrapper .orange-col{
         margin-bottom: -120px !important;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px){
+    .header-content .logo{
+        width: 160px;
+    }
+}
+
+@media(max-width:769px){
+    .header-content .logo{
+        margin-bottom: 20px;
+    }
+}
+@media(max-width:767px){
+    .header-content .card-wrapper div{
+        margin-bottom: 35px;
+    }
+    .header-content .regions{
+        margin-top: 30px;
+    }
+    .header-content .blue-div-wrapper{
+        margin-top: 30px;
+    }
+    .exhibition-wrapper .container .row div{
+        margin: auto;
+    }
+
+    .exhibition-wrapper img{
+        margin-top: 30px !important;
+        margin: auto;
+    }
+}
+
+@media(min-width: 991px){
+    .header-content .card-wrapper h2{
+        font-size: 1.75rem;
     }
 }
 

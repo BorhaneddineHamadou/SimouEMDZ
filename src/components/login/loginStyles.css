@@ -63,6 +63,10 @@ body{
     color: var(--primary-orange);
 }
 
+.login-wrapper .colored-span a{
+    text-decoration: none;
+}
+
 .login-wrapper hr{
     margin-top: 10px;
 }
