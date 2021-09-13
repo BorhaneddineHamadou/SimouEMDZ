@@ -6,10 +6,14 @@ import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from 'react-redux';
+import {store} from './redux/configureStore';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+       <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

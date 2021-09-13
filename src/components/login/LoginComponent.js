@@ -2,10 +2,17 @@ import React, {Component} from 'react';
 import { Control, Errors, LocalForm } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 import { Row, Button } from 'reactstrap';
+import { Loading } from '../loading/LoadingComponent';
 import './loginStyles.css';
+import {onAuthStateChanged} from 'firebase/auth';
+import { auth } from '../../firebase';
 
 const required = (val) => (val) && val.length;
 const validEmail = (val) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(val);
+
+const authDone = (history) => {
+    
+}
 
 class Login extends Component{
     constructor(props){
@@ -16,10 +23,24 @@ class Login extends Component{
         }
         this.toggle_hide_password = this.toggle_hide_password.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleGoogleSignIn = this.handleGoogleSignIn.bind(this);
+        this.handleFacebookSignIn = this.handleFacebookSignIn.bind(this);
     }
 
-    handleSubmit(values){
-       alert(JSON.stringify(values));
+    handleSubmit = async (values, e) => {
+        e.preventDefault();
+        await this.props.loginInitiate(values.email, values.password);
+        if(this.props.userLocal){
+            this.props.history.push('/home');
+        }
+    }
+
+    handleFacebookSignIn(){
+        this.props.facebookSignInInitiate();
+    }
+
+    handleGoogleSignIn(){
+       this.props.googleSignInInitiate();
     }
 
     toggle_hide_password(e){
@@ -29,14 +50,19 @@ class Login extends Component{
         });
     }
 
+
+
     render(){
+        if(this.props.userLocal){
+            this.props.history.push('/home');
+        }
         return(
            <div className="login-wrapper">
                <div className="container">
                    <div className="row col-sm-8 col-lg-5 offset-lg-7 primary-row">
                         <h1 className="fs-2 text-center">Connexion à votre compte</h1>
                         <span className="colored-span text-center">Renseignez les champs ci-dessous</span>
-                        <LocalForm className="mt-5" onSubmit={this.handleSubmit}>
+                        <LocalForm className="mt-5" onSubmit={(values, e) => this.handleSubmit(values, e)}>
                             <Row className="form-group mb-3">
                                 <Control.text model=".email" id="email" name="email" className="form-control"
                                 placeholder="Adresse email"
@@ -68,6 +94,7 @@ class Login extends Component{
                             <Row className="form-group mb-3">
                                 <div className="connect-div">
                                    <Button type="submit" className="btn primary-button">Se Connecter</Button>
+                                   {(this.props.currentUser.isLoading) ? <p className="text-dark"><Loading /></p> : <p className="text-danger">{this.props.currentUser.error}</p>}
                                 </div>
                             </Row>
                        </LocalForm>
@@ -76,12 +103,12 @@ class Login extends Component{
                        </span>
                        <hr className="me-auto col-5" /> OU <hr className="ms-auto col-5" />
                        <div className="row mb-3 mt-3">
-                          <div className="login-google btn btn-social-icon btn-google align-items-center">
+                          <div className="login-google btn btn-social-icon btn-google align-items-center" onClick={this.handleGoogleSignIn}>
                              <i class="fa fa-google text-start ms-3 align-middle mt-1"></i> <span className="d-inline align-middle">Connecter avec Google</span>
                           </div>
                        </div>
                        <div className="row mb-3">
-                          <div className="login-google btn btn-social-icon btn-facebook align-items-center">
+                          <div className="login-google btn btn-social-icon btn-facebook align-items-center" onClick={this.handleFacebookSignIn}>
                              <i class="fa fa-facebook text-start ms-3 align-middle mt-1"></i> <span className="d-inline align-middle">Connecter avec Facebook</span>
                           </div>
                        </div>

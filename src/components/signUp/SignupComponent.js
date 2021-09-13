@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 import { Row, Button, Col } from 'reactstrap';
+import { Loading } from '../loading/LoadingComponent';
 import populateWilayas from '../wilayas_communes/WilayasCommunes';
 import './signupStyles.css';
+import {onAuthStateChanged} from 'firebase/auth';
+import { auth } from '../../firebase';
 
 
 const required = (val) => (val) && val.length;
@@ -16,6 +19,15 @@ const matchPassword = (val) => (val === document.getElementById('password').valu
 class Signup extends Component{
     constructor(props){
         super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit = async (values, e) =>{
+        e.preventDefault();
+        await this.props.registerInitiate(values.firstname, values.lastname, values.email, values.phonenum, values.wilaya, values.commune, values.password);
+        if(this.props.userLocal){
+            this.props.history.push('/home');
+        }
     }
 
     componentDidMount(){
@@ -23,13 +35,16 @@ class Signup extends Component{
     }
 
     render(){
+        if(this.props.userLocal){
+            this.props.history.push('/home');
+        }
         return(
            <div className="signup-wrapper">
                <div className="container">
                    <div className="row col-sm-8 col-lg-5 offset-lg-7 primary-row">
                         <h1 className="fs-2 text-center">Créez votre compte</h1>
                         <span className="colored-span text-center">Renseignez les champs ci-dessous</span>
-                        <LocalForm className="mt-5">
+                        <LocalForm id='registration-form' className="mt-5" onSubmit={(values, e)=>this.handleSubmit(values, e)}>
                             <Row className="two-control-forms-wrapper form-group mb-3 no-padding">
                                 <Col xs="6" className="first-form-control">
                                     <Control.text model=".firstname" id="firstname" name="firstname" className="form-control"
@@ -112,10 +127,12 @@ class Signup extends Component{
                                 <Control type="password" model=".password" name="password" id="password"
                                 className="form-control" placeholder="Mot de passe"
                                 validators={{
-                                    required
+                                    required,
+                                    minLength: minLength(6)
                                 }} />
                                 <Errors className="text-danger" model=".password" show="touched" messages={{
-                                     required: " | Obligatoire"
+                                     required: " | Obligatoire",
+                                     minLength: "Le mot de passe doit comporter au moins six caractères"
                                 }} />
                             </Row>
                             <Row className="form-group mb-3">
@@ -134,6 +151,7 @@ class Signup extends Component{
                             <Row className="form-group mb-3">
                                 <div className="connect-div">
                                    <Button type="submit" className="btn primary-button">S'inscrire</Button>
+                                   {(this.props.currentUser.isLoading) ? <p className="text-dark"><Loading /></p> : <p className="text-danger">{this.props.currentUser.error}</p>}
                                 </div>
                             </Row>
                        </LocalForm>

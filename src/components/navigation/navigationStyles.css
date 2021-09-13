@@ -24,3 +24,13 @@
 .navbar{
     background-color: #032046 !important;
 }
+
+.nav-container .navbar-text .dropdown-toggle{
+    background-color: transparent;
+    border: unset;
+}
+
+.nav-container .navbar-text .dropdown-toggle:hover{
+    background-color: transparent;
+    border: unset;
+}

@@ -4,15 +4,22 @@ import { Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem,
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+import LogedNav from "./LogedNavComponent";
+
+
+
+const NavText = (props) => {
+    
+}
 
 class Navigation extends Component{
     constructor(props){
         super(props);
+        this.toggleNav = this.toggleNav.bind(this);
 
         this.state={
             isNavOpen: false
         }
-        this.toggleNav = this.toggleNav.bind(this);
     }
 
     toggleNav(){
@@ -39,7 +46,9 @@ class Navigation extends Component{
                                 <NavLink href="#">Acheter un appareil</NavLink>
                             </NavItem>
                         </Nav>
-                        <NavbarText className="text-light"> <Link to='/login'> <FontAwesomeIcon icon={faSignInAlt} style={{color: "FFF"}} />&nbsp; Se connecter</Link></NavbarText>
+                        {(!this.props.userLocal) ? <NavbarText className="text-light"> <Link to='/login'> <FontAwesomeIcon icon={faSignInAlt} style={{color: "FFF"}} />&nbsp; Se connecter</Link></NavbarText> : 
+                                <LogedNav logoutInitiate={() => this.props.logoutInitiate()} userName={this.props.userName} />
+                        }
                     </Collapse>
                 </div>
             </Navbar>

@@ -34,7 +34,7 @@ class Header extends Component{
                                     <LocalForm>
                                         <Row className="form-group">
                                                 <div className="col-lg-3 col-sm-5">
-                                                    <Control.select model=".device" name="device" className="form-control">
+                                                    <Control.select model=".device_one" name="deviceone" className="form-control">
                                                         <option>Appareil à réparer</option>
                                                         <option>Climatiseur</option>
                                                         <option>Machine à laver</option>
@@ -42,7 +42,7 @@ class Header extends Component{
                                                     </Control.select>  
                                                 </div> 
                                                 <div className="col-lg-5 col-sm-7 mt-3 mt-sm-0">
-                                                    <Control.text model=".address" name="address" className="form-control address-input"
+                                                    <Control.text model=".address_one" name="address_one" className="form-control address-input"
                                                     placeholder="Saisissez votre adresse" />
                                                 </div>
                                                 <div className="col-12 col-lg-4 mt-3 mt-lg-0">
@@ -78,7 +78,7 @@ class Header extends Component{
                                     <LocalForm>
                                             <Row className="form-group">
                                                     <div className="col-lg-3 col-sm-5">
-                                                        <Control.select model=".device" name="device" className="form-control">
+                                                        <Control.select model=".device_two" name="device_two" className="form-control">
                                                             <option>Appareil à réparer</option>
                                                             <option>Climatiseur</option>
                                                             <option>Machine à laver</option>
@@ -86,7 +86,7 @@ class Header extends Component{
                                                         </Control.select>  
                                                     </div> 
                                                     <div className="col-lg-5 col-sm-7 mt-3 mt-sm-0">
-                                                        <Control.text model=".address" name="address" className="form-control address-input"
+                                                        <Control.text model=".address_two" name="address_two" className="form-control address-input"
                                                         placeholder="Saisissez votre adresse" />
                                                     </div>
                                                     <div className="col-12 col-lg-4 mt-3 mt-lg-0">
@@ -120,7 +120,7 @@ class Header extends Component{
                                      <LocalForm>
                                             <Row className="form-group"> 
                                                     <div className="col-10">
-                                                        <Control.text model=".address" name="address" className="form-control address-input"
+                                                        <Control.text model=".address_three" name="address_three" className="form-control address-input"
                                                         placeholder="Saisissez votre adresse" />
                                                     </div>
                                                     <div className="col-3 mt-3">
