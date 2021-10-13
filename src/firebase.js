@@ -20,9 +20,7 @@ onAuthStateChanged(auth, user => {
         localStorage.setItem('user', JSON.stringify(true));
         localStorage.setItem('userName', JSON.stringify(user.displayName));
         localStorage.setItem('userEmail', JSON.stringify(user.email));
-        console.log('Hello Here');
     } else {
-        console.log('Hello Here');
         localStorage.clear();
     }
 })

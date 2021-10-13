@@ -1,16 +1,10 @@
 import React, {Component} from "react";
 import './navigationStyles.css';
-import { Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink } from "reactstrap";
+import { Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem } from "reactstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSignInAlt} from '@fortawesome/free-solid-svg-icons';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LogedNav from "./LogedNavComponent";
-
-
-
-const NavText = (props) => {
-    
-}
 
 class Navigation extends Component{
     constructor(props){
@@ -37,13 +31,13 @@ class Navigation extends Component{
                     <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav className="me-auto" navbar>
                             <NavItem className="ms-md-5">
-                                <NavLink href="#" className="active">Accueil</NavLink>
+                                <NavLink to="/home">Accueil</NavLink>
                             </NavItem>
                             <NavItem className="ms-md-5">
-                                <NavLink href="#">Faire Réparer</NavLink>
+                                <NavLink to="/repair">Faire Réparer</NavLink>
                             </NavItem>
                             <NavItem className="ms-md-5">
-                                <NavLink href="#">Acheter un appareil</NavLink>
+                                <NavLink to="/buyForm">Acheter un appareil</NavLink>
                             </NavItem>
                         </Nav>
                         {(!this.props.userLocal) ? <NavbarText className="text-light"> <Link to='/login'> <FontAwesomeIcon icon={faSignInAlt} style={{color: "FFF"}} />&nbsp; Se connecter</Link></NavbarText> : 

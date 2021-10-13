@@ -15,11 +15,13 @@ const authDone = (history) => {
 }
 
 class Login extends Component{
+    _isMounted=false;
     constructor(props){
         super(props);
 
         this.state={
-            password_hidden : true
+            password_hidden : true,
+            store: ""
         }
         this.toggle_hide_password = this.toggle_hide_password.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,7 +33,11 @@ class Login extends Component{
         e.preventDefault();
         await this.props.loginInitiate(values.email, values.password);
         if(this.props.userLocal){
-            this.props.history.push('/home');
+            if(document.referrer.includes('/buyForm') || document.referrer.includes('/repairForm') || this.props.historyForm){
+                window.close()
+            }else{
+                this.props.history.push('/home');
+            }
         }
     }
 
@@ -50,11 +56,28 @@ class Login extends Component{
         });
     }
 
+    componentDidMount(){
+        this._isMounted=true;
+        window.addEventListener("storage", e => {
+            if(this._isMounted){
+                this.setState({
+                    store: "New Value : " + e.newValue
+                 })
+            }
+        }) 
+    }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
 
     render(){
         if(this.props.userLocal){
-            this.props.history.push('/home');
+            if(document.referrer.includes('/buyForm') || document.referrer.includes('/repairForm') || this.props.historyForm){
+                window.close()
+            }else{
+                this.props.history.push('/home');
+            }
         }
         return(
            <div className="login-wrapper">
@@ -99,7 +122,9 @@ class Login extends Component{
                             </Row>
                        </LocalForm>
                        <span className="colored-span mb-3">Vous n'avez pas un compte ? &nbsp;&nbsp;
-                          <Link to='/signup'> <span className="orange-colored-span">Inscrivez-vous</span></Link>
+                          {(document.referrer.includes('/buyForm')) ? <Link to='/signup/buyForm'> <span className="orange-colored-span">Inscrivez-vous</span></Link> : 
+                          <Link to='/signup'> <span className="orange-colored-span">Inscrivez-vous</span></Link>}
+                          
                        </span>
                        <hr className="me-auto col-5" /> OU <hr className="ms-auto col-5" />
                        <div className="row mb-3 mt-3">

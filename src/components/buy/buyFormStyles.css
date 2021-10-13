@@ -1,0 +1,246 @@
+:root{
+    --primary-blue: #1A56A6;
+    --primary-orange: #FF802B;
+    --primary-orange-hover: #E45B00;
+}
+
+*{
+    transition:all .2s ease-in-out;
+}
+
+.product-image{
+    width: 100%;
+}
+
+.basket-card{
+    background-color: #e4e1e1;
+    border-radius: 30px;
+    padding: 25px;
+}
+
+.basket-card h5, .basket-card hr{
+    color: #666666;
+}
+
+.blue-header, .basket-card .colored-span{
+    color: #1A56A6;
+}
+
+.basket-card .orange-span{
+    color: #FF802B;
+}
+
+.buyForm-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.basket-card form{
+    font-size: 18px;
+}
+
+.basket-card .orange-colored-span{
+    color: var(--primary-orange);
+}
+
+.basket-card .colored-span a{
+    text-decoration: none;
+}
+
+.basket-card .login-hr{
+    margin-top: 10px;
+}
+
+.basket-card .orange-colored-span{
+    color: var(--primary-orange);
+}
+
+.basket-card .login-google{
+    width: 80% !important;
+    padding:8px;
+    height: fit-content;
+    margin:auto;
+    text-align: center;
+}
+
+.basket-card .login-google span{
+    margin-left: 40px;
+}
+
+.basket-card .form-group #password{
+    width: 90%;
+    border-radius: .25rem 0rem 0rem .25px;
+}
+
+.basket-card .form-group .input-group-text{
+    width: 10%;
+    background-color: #fff;
+    border: unset;
+    /* border-radius: 0px; */
+    border-radius: 0px .25rem .25rem 0px;
+}
+
+.basket-card input[type="text"], .basket-card input[type="password"], .basket-card select{
+    background-color: #fff;
+    border: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.basket-card .login-row{
+    width: 80%;
+    margin: auto;
+}
+
+.basket-card .first-form-control select{
+    width: 97%;
+}
+
+.basket-card .second-form-control select{
+    width: 97%;
+    margin-left: 3%;
+}
+.basket-card .special-row{
+    padding-right: 0;
+    padding-left: 0;
+    margin: auto;
+}
+
+.MuiPaper-root{
+    background-color: transparent !important;
+}
+
+.first-button, .next-button{
+    background-color: var(--primary-orange);
+    border: unset;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+    width: 100%;
+    color: #FFF;
+}
+
+.first-button:hover, .next-button:hover {
+    background-color: var(--primary-orange-hover);
+}
+
+.back-button{
+    background-color: unset;
+    color: var(--primary-blue);
+    border: unset;
+    font-weight: 600;
+}
+
+.back-button:hover{
+    color: #032046;
+    background-color: transparent;
+}
+
+.back-button:hover>svg{
+    color: #032046 !important;
+}
+
+.next-button{
+    width: 180px;
+    margin-left: 20%;
+}
+
+.promo-part input[type="text"]{
+    background-color: #fff;
+    border: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.promo-part .submit-button {
+    background-color: var(--primary-orange) !important;
+    border: unset !important;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+    color: #fff !important;
+    margin-top: 5px;
+    box-shadow: none !important;
+}
+
+.promo-part .pay-sum{
+    border: 2px solid var(--primary-orange);
+    border-radius: 25px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.promo-part .submit-button:hover {
+    background-color: var(--primary-orange-hover);
+}
+
+.basket-card .connect-link{
+    background-color: var(--primary-blue);
+    border: unset;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.basket-card .connect-link:hover{
+    background-color: #063573;
+}
+
+input[type='radio'] {
+    -webkit-appearance:none;
+    vertical-align: middle;
+    width:20px;
+    height:20px;
+    border:2px solid #FF802B;
+    border-radius:50%;
+    outline:none;
+  }
+  
+  input[type='radio']:hover {
+    box-shadow:0 0 5px 0px orange inset;
+  }
+  
+  input[type='radio']:before {
+    content:'';
+    display:block;
+    width:10px;
+    height:10px;
+    margin: 20% auto;    
+    border-radius:50%;    
+  }
+  input[type='radio']:checked:before {
+    background:#FF802B;
+  }
+
+  .warning-span{
+    font-size: 0.85rem;
+    margin-left: 10px;
+    font-weight: 500;
+  }
+
+@media (max-width:767px) {
+    .product-image{
+        width: 70%;
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .basket-card .login-row{
+        width: 100%;
+    }
+    .basket-card .login-google{
+        width: 90% !important;
+    }
+    .basket-card .form-group #password{
+        width: 85%;
+    }
+    .basket-card .form-group .input-group-text{
+        width: 15%;
+    }
+    .basket-card .special-row{
+        padding-right: 0;
+        padding-left: 0;
+        margin: auto;
+    }
+}

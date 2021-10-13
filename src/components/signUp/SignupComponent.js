@@ -20,23 +20,39 @@ class Signup extends Component{
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            store: ""
+        }
     }
 
     handleSubmit = async (values, e) =>{
         e.preventDefault();
         await this.props.registerInitiate(values.firstname, values.lastname, values.email, values.phonenum, values.wilaya, values.commune, values.password);
         if(this.props.userLocal){
-            this.props.history.push('/home');
+            if(this.props.historyForm){
+                window.close()
+            }else{
+                this.props.history.push('/home');
+            }
         }
     }
 
     componentDidMount(){
         populateWilayas('wilaya', 'commune');
+        window.addEventListener("storage", e => {
+            this.setState({
+               store: "New Value : " + e.newValue
+            })
+        })
     }
 
     render(){
         if(this.props.userLocal){
-            this.props.history.push('/home');
+            if(this.props.historyForm){
+                window.close()
+            }else{
+                this.props.history.push('/home');
+            }
         }
         return(
            <div className="signup-wrapper">
@@ -156,7 +172,9 @@ class Signup extends Component{
                             </Row>
                        </LocalForm>
                        <span className="colored-span mb-3">Déjà inscrit ?  &nbsp;&nbsp;
-                         <Link to='/login'> <span className="orange-colored-span">Connectez-vous</span></Link>
+                         {this.props.historyForm ? <Link to='/login/buyForm'> <span className="orange-colored-span">Connectez-vous</span></Link> : 
+                         <Link to='/login'> <span className="orange-colored-span">Connectez-vous</span></Link>}
+                         
                        </span>
                    </div>
                </div>

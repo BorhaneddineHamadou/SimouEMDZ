@@ -1,0 +1,290 @@
+:root{
+    --primary-blue: #1A56A6;
+    --primary-orange: #FF802B;
+    --primary-orange-hover: #E45B00;
+}
+
+*{
+    transition:all .2s ease-in-out;
+}
+
+.basket-card{
+    background-color: #e4e1e1;
+    border-radius: 30px;
+    padding: 25px;
+}
+
+.basket-card h5, .basket-card hr{
+    color: #666666;
+}
+
+.blue-header, .basket-card .colored-span{
+    color: #1A56A6;
+}
+
+.basket-card .orange-span{
+    color: #FF802B;
+}
+
+.repairForm-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.basket-card form{
+    font-size: 18px;
+}
+
+.basket-card .orange-colored-span{
+    color: var(--primary-orange);
+}
+
+.basket-card .colored-span a{
+    text-decoration: none;
+}
+
+.basket-card .orange-colored-span{
+    color: var(--primary-orange);
+}
+
+.basket-card .form-group .input-group-text{
+    width: 10%;
+    background-color: #fff;
+    border: unset;
+    border-radius: 0px .25rem .25rem 0px;
+}
+
+.basket-card input[type="text"], .basket-card select{
+    background-color: #fff;
+    border: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.basket-card .first-form-control select{
+    width: 97%;
+}
+
+.basket-card .second-form-control select{
+    width: 97%;
+    margin-left: 3%;
+}
+.basket-card .special-row{
+    padding-right: 0;
+    padding-left: 0;
+    margin: auto;
+}
+
+.MuiPaper-root{
+    background-color: transparent !important;
+}
+
+.first-button, .next-button{
+    background-color: var(--primary-orange);
+    border: unset;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+    width: 100%;
+    color: #FFF;
+}
+
+.first-button:hover, .next-button:hover {
+    background-color: var(--primary-orange-hover);
+}
+
+.back-button{
+    background-color: unset;
+    color: var(--primary-blue);
+    border: unset;
+    font-weight: 600;
+}
+
+.back-button:hover{
+    color: #032046;
+    background-color: transparent;
+}
+
+.back-button:hover>svg{
+    color: #032046 !important;
+}
+
+.next-button{
+    width: 180px;
+    margin-left: 20%;
+}
+
+.promo-part input[type="text"]{
+    background-color: #fff;
+    border: unset;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.promo-part .submit-button {
+    background-color: var(--primary-orange) !important;
+    border: unset !important;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+    color: #fff !important;
+    margin-top: 5px;
+    box-shadow: none !important;
+}
+
+.promo-part .pay-sum{
+    border: 2px solid var(--primary-orange);
+    border-radius: 25px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.promo-part .submit-button:hover {
+    background-color: var(--primary-orange-hover);
+}
+
+.basket-card .connect-link{
+    background-color: var(--primary-blue);
+    border: unset;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.basket-card .connect-link:hover{
+    background-color: #063573;
+}
+
+.warning-span{
+    font-size: 0.85rem;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.basket-card .blue-section{
+    background-color: var(--primary-blue);
+    color: #FFF;
+}
+
+.radios-section{
+    margin: auto;
+    width: 100%;
+}
+
+.radios-section label{
+    display: block;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #FFF;
+    margin-bottom: 16px;
+    width: 90%;
+    color: #666666;
+    font-size: 16px;
+    border: 2px solid transparent;
+}
+
+.radios-section label:hover, .radios-section label.active{
+    border: 2px solid var(--primary-orange);
+}
+
+.radios-section label.active{
+    background-image: url('../../images/checked.svg');
+    background-position: calc(100% - 0.75rem) center !important;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.radios-section input[type='radio'] {
+    appearance:none;
+    width:0px;
+    height:0px;
+    border:none;
+    outline:none;
+}
+  
+.radios-section input[type='radio']:hover {
+  box-shadow: inset;
+}
+
+.radios-section input[type='radio']:checked:before {
+    background:none;
+}
+
+.basket-card textarea{
+    border-radius: 8px;
+    border: none;
+}
+
+.time-card{
+    background-color: #e4e1e1;
+    border-radius: 30px;
+}
+
+.time-card .content-section{
+    padding: 25px;
+}
+
+.time-card .blue-section{
+    background-color: var(--primary-blue);
+    border-radius: 30px 30px 0px 0px;
+    padding: 20px 25px 10px 25px;
+    color: #FFF;
+}
+
+.content-section label{
+    display: block;
+    padding: 10px 16px 10px 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    background-color: #FFF;
+    margin: auto;
+    margin-bottom: 16px;
+    width: 90%;
+    color: #666666;
+    font-size: 16px;
+    border: 2px solid #707070;
+    text-align: center;
+}
+
+.content-section label:hover, .radios-section label.active{
+    border: 2px solid var(--primary-orange);
+}
+
+.content-section label.active{
+    background-image: url('../../images/checked.svg');
+    background-position: calc(100% - 0.75rem) center !important;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.content-section input[type='radio'] {
+    appearance:none;
+    width:0px;
+    height:0px;
+    border:none;
+    outline:none;
+}
+  
+.content-section input[type='radio']:hover {
+  box-shadow: inset;
+}
+
+.content-section input[type='radio']:checked:before {
+    background:none;
+}
+
+@media (max-width:767px) {
+    .basket-card .form-group .input-group-text{
+        width: 15%;
+    }
+    .basket-card .special-row{
+        padding-right: 0;
+        padding-left: 0;
+        margin: auto;
+    }
+    .radios-section label{
+        width: 100%;
+    }
+}
