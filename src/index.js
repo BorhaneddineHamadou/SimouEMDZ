@@ -8,6 +8,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import {store} from './redux/configureStore';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 ReactDOM.render(
   <React.StrictMode>

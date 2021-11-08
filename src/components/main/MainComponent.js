@@ -10,6 +10,7 @@ import { registerInitiate, loginInitiate, logoutInitiate, googleSignInInitiate, 
 import BuyForm from '../buy/BuyFormComponent';
 import Repair from '../repair/RepairComponent';
 import RepairForm from '../repairForm/RepairFormComponent';
+import Store from '../store/StoreComponent';
 
 
 const mapDispatchToProps = (dispatch) => ({
@@ -74,6 +75,7 @@ class Main extends Component{
                     <Route path='/repair' component={()=> <Repair history={history} />} />
                     <Route path='/repairForm' component={()=> <RepairForm history={history} userLocal={userLocal} />} />
                     <Route path='/buyForm' component={() => <BuyForm history={history} userLocal={userLocal} />} />
+                    <Route path='/store' component={() => <Store />} />
                     <Redirect to='/home' />
                     <Footer />
                 </div>

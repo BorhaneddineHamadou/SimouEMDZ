@@ -25,11 +25,13 @@
     "react-redux-form": "^1.16.14",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
     "react-timeslot-calendar": "^0.2.0",
     "reactstrap": "^8.10.0",
     "redux": "^4.1.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^1.0.1",
     "yup": "^0.32.9"
   },

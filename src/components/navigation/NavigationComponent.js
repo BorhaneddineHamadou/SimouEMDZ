@@ -24,7 +24,7 @@ class Navigation extends Component{
 
     render(){
         return(
-            <Navbar dark expand="md" color="dark">
+            <Navbar dark expand="lg" color="dark">
                 <div className="container nav-container">
                     <NavbarBrand href="#"> <img src="assets/images/logo_white.svg" alt="Simou Eléctroménager DZ | LOGO" className="logo" /> </NavbarBrand>
                     <NavbarToggler onClick={this.toggleNav} />
@@ -37,7 +37,8 @@ class Navigation extends Component{
                                 <NavLink to="/repair">Faire Réparer</NavLink>
                             </NavItem>
                             <NavItem className="ms-md-5">
-                                <NavLink to="/buyForm">Acheter un appareil</NavLink>
+                                {/* <NavLink to="/buyForm">Acheter un appareil</NavLink> */}
+                                <NavLink to="/store">Acheter un appareil</NavLink>
                             </NavItem>
                         </Nav>
                         {(!this.props.userLocal) ? <NavbarText className="text-light"> <Link to='/login'> <FontAwesomeIcon icon={faSignInAlt} style={{color: "FFF"}} />&nbsp; Se connecter</Link></NavbarText> : 
